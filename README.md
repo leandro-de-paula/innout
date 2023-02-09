@@ -39,6 +39,7 @@ extras/db.sql
 ```
 >Copy and paste, or run this file in your database manager
 
+3 - Create a file called env.ini inside the `<src>` folder, then copy the structure that is in the env.sample.ini file that is also in the `<src>` folder, paste it in the env.ini file and then fill in the data of your database environment and save.
 ## 🚧 Under development 🚧 
 
 
