@@ -2,16 +2,21 @@
 
 <?php
 use database\Database;
-require_once(dirname(__FILE__, 2 ) . "/src/config/Database.php");
+use Src\Models\User;
 
-$sql = "SELECT * FROM users";
-$result = Database::getResultFromQuery($sql);
+require_once(dirname(__FILE__, 2 ) . "/src/config/config.php");
+require_once(dirname(__FILE__, 2 ) . "/src/models/User.php");
 
-while ($row = $result->fetch_assoc()) {
-    echo "<pre>";
-    print_r($row);
-    echo "</pre>";
-    echo "<br>";
-}
+
+$user = new User([
+    "name" => "Evellyn",
+    "email" => "evellyn@gmail.com",
+    "address" => "Rua das Flores"
+]);
+
+echo "<pre>";
+print_r($user);
+echo "</pre>";
+echo " -- end -- ";
 
 
