@@ -13,10 +13,13 @@ $user = new User([
     "email" => "evellyn@gmail.com",
     "address" => "Rua das Flores"
 ]);
-
+// $user->set("email","evellyn.fontenele@gmail.com");
+$user->email = "evellyn.fontenele@gmail.com";
 echo "<pre>";
 print_r($user);
+print_r($user->email);
 echo "</pre>";
+
 echo " -- end -- ";
 
 
