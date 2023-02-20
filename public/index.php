@@ -15,9 +15,10 @@ $user = new User([
 ]);
 // $user->set("email","evellyn.fontenele@gmail.com");
 $user->email = "evellyn.fontenele@gmail.com";
+
 echo "<pre>";
 print_r($user);
-print_r($user->email);
+print_r($user->getSelect(["id" => 1, "name" => "Evellyn"], "name, email"));
 echo "</pre>";
 
 echo " -- end -- ";
