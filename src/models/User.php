@@ -16,4 +16,3 @@ class User extends Model
         'is_admin'
     ];
 }
-echo " -- user -- ";

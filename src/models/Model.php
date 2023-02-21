@@ -1,6 +1,8 @@
 <?php
 namespace Src\Models;
 
+use database\Database;
+
 class Model
 {
     protected static $tableName = "";
@@ -27,11 +29,28 @@ class Model
         $this->values[$key] = $value;
     }
 
-    public static function getSelect($filters = [],$columns = "*") {
+    public static function get($filters = [], $columns = "*") {
+        $objects = [];
+        $result = static::getResultSetFromSelect($filters, $columns);
+        if ($result) {
+            $class = get_called_class();
+            while ($row = $result->fetch_assoc()) {
+                array_push($objects, new $class($row));
+            }
+        }
+        return $objects;
+    }
+
+    public static function getResultSetFromSelect($filters = [], $columns = "*") {
         $sql = "SELECT {$columns} FROM " 
             . static::$tableName 
             . static::getFilters($filters);
-        return $sql;
+        $result = Database::getResultFromQuery($sql); 
+        if ($result->num_rows === 0) {
+            return null;
+        } else {
+            return $result;
+        }
     }
 
     public static function getFilters($filters) {
@@ -55,4 +74,3 @@ class Model
         }
     }
 }
-echo " -- model -- ";
