@@ -1,8 +1,5 @@
 <?php
 namespace Src\Models;
-use Src\Models\Model;
-
-require_once(realpath(MODEL_PATH . "/Model.php"));
 class User extends Model
 {
     protected static $tableName = "users";
