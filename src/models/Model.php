@@ -1,8 +1,4 @@
 <?php
-namespace Src\Models;
-
-use database\Database;
-
 class Model
 {
     protected static $tableName = "";

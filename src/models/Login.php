@@ -1,5 +1,4 @@
 <?php
-namespace Src\Models;
 require_once(realpath(MODEL_PATH . "/User.php"));
 
 class Login extends Model
