@@ -25,6 +25,7 @@
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" 
                     class="form-control" 
+                    value="<?= $email ?>"
                     placeholder="Informe seu email" autofocus>
             </div>
             <div class="form-group">
