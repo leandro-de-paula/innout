@@ -61,7 +61,7 @@ Path:
 ```
 
 
-3 - Change the document root of the Apache web server, for that open the **000-default.conf** file in your text editor and search for **DocumentRoot**:
+3 - Change the document root of the Apache web server, for that open the **000-default.conf** file in your text editor and look for **DocumentRoot** and point to the project's public folder:
 
 ```sh
      #However, you must set it for any further virtual host explicitly.
