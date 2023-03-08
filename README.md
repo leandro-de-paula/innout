@@ -40,6 +40,61 @@ extras/db.sql
 >Copy and paste, or run this file in your database manager
 
 3 - Create a file called env.ini inside the `<src>` folder, then copy the structure that is in the env.sample.ini file that is also in the `<src>` folder, paste it in the env.ini file and then fill in the data of your database environment and save.
+
+## ⚙️ Settings
+1 - This configuration is for **Linux Ubuntu** environments with **Apache**.
+2 - **Backup** - Let's back up apache configuration files before modifying them.
+Copy and paste the files below in a location of your choice;
+
+File:
+**000-default.conf**
+Path:
+```
+/etc/apache2/sites-enabled/000-default
+```
+
+File:
+**apache2.conf**
+Path:
+```
+/etc/apache2/apache2.conf
+```
+
+
+3 - Change the document root of the Apache web server, for that open the **000-default.conf** file in your text editor and search for **DocumentRoot**:
+
+```sh
+     #However, you must set it for any further virtual host explicitly.
+     #ServerName www.example.com
+
+     ServerAdmin webmaster@localhost
+     DocumentRoot /var/www/html/innout/public/
+```
+
+
+4 - In the Apache configuration file **apache2.conf** change the directives as follows in your text editor:
+
+```xml
+<Directory /usr/share>
+     AllowOverride None
+     Require all granted
+</Directory>
+
+<Directory var/www/html/innout/public>
+     Options Indexes FollowSymLinks
+     AllowOverride All
+     Require all granted
+</Directory>
+
+```
+
+5 - Restart apache:
+
+```sh
+sudo service apache2 restart
+```
+
+
 ## 🚧 Under development 🚧 
 
 
