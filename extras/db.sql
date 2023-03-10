@@ -12,6 +12,7 @@ CREATE TABLE users (
     end_date DATE,
     is_admin BOOLEAN NOT NULL DEFAULT false
 );
+
 CREATE TABLE working_hours (
     id INT(6) AUTO_INCREMENT PRIMARY KEY, 
     user_id INT(6),
