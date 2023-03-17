@@ -102,6 +102,13 @@ header.header .dropdown:hover {
     background-color: rgba(0, 0, 0, .1);
 }
 
+header .avatar {
+    height: 50%;
+    border-radius: 50%;
+    margin-left: 10px;
+    background-color: #222;
+}
+
 aside.sidebar {
     display: flex;
     flex-direction: column;
@@ -222,3 +229,4 @@ footer.footer {
 .record {
     font-size: 2.2rem;
 }
+
