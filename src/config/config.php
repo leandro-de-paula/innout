@@ -12,6 +12,7 @@ define("EXECEPTION_PATH", realpath(dirname(__FILE__) . "/../exceptions"));
 // Files
 require_once(realpath(dirname(__FILE__) . "/Database.php"));
 require_once(realpath(dirname(__FILE__) . "/loader.php"));
+require_once(realpath(dirname(__FILE__) . "/session.php"));
 require_once(realpath(MODEL_PATH . "/Model.php"));
 require_once(realpath(MODEL_PATH . '/User.php'));
 require_once(realpath(EXECEPTION_PATH . "/AppException.php"));
