@@ -62,9 +62,16 @@ class Model
             foreach(static::$columns as $col) {
                 $sql .= static::getFormatedValue($this->$col) . ",";
             }
-            $sql[strlen($sql) - 1] = ")";
-            $id = Database::executeSQL($sql);
-            $this->id = $id;
+        $sql[strlen($sql) - 1] = ")";
+
+        echo "<pre>";  
+        echo $sql;
+        echo "<br>";      
+        var_dump($sql);
+        echo "</pre>";
+        die;
+        $id = Database::executeSQL($sql);
+        $this->id = $id;
     }
 
     public static function getFilters($filters) {
