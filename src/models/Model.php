@@ -66,10 +66,8 @@ class Model
 
         echo "<pre>";  
         echo $sql;
-        echo "<br>";      
-        var_dump($sql);
         echo "</pre>";
-        die;
+        // die;
         $id = Database::executeSQL($sql);
         $this->id = $id;
     }
